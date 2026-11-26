@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <main class="booking-page">
+
+        <div class="booking-card">
+
+            <h1>IPL Ticket Booking</h1>
+            <p class="booking-subtitle">
+                Book your tickets and experience the excitement live!
+            </p>
+
+            <form class="booking-form" id="booking-form">
+
+                <h2>Enter Your Booking Details</h2>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Enter your full name"
+                           required minlength="3" maxlength="30">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Enter your email address"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="Enter 10-digit phone number"
+                           required minlength="10" maxlength="10"
+                           pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="match">Select Match</label>
+                    <select id="match" name="match" required>
+                        <option value="">-- Select a Match --</option>
+                        <option value="CSK vs MI">CSK vs MI</option>
+                        <option value="RCB vs KKR">RCB vs KKR</option>
+                        <option value="MI vs RCB">MI vs RCB</option>
+                        <option value="CSK vs KKR">CSK vs KKR</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="stand">Select Stand Category</label>
+                    <select id="stand" name="stand" required>
+                        <option value="">-- Select Stand --</option>
+                        <option value="General">General</option>
+                        <option value="Premium">Premium</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tickets">Number of Tickets</label>
+                    <input type="number" id="tickets" name="tickets"
+                           placeholder="Enter ticket quantity"
+                           required min="1" max="10">
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Booking Preference</label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" id="sms"
+                                   name="preference" value="SMS">
+                            SMS Updates
+                        </label>
+
+                        <label>
+                            <input type="radio" id="emailUpdates"
+                                   name="preference" value="Email">
+                            Email Updates
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit">Submit Booking</button>
+                    <button type="reset">Reset Form</button>
+                </div>
+
+            </form>
+
+            <div class="card" id="booking-summary">
+                <h2>Booking Summary</h2>
+                <p>Match: <span id="summary-match">Not selected</span></p>
+                <p>Stand: <span id="summary-stand">Not selected</span></p>
+                <p>Ticket Price: <span id="summary-price">₹0</span></p>
+                <p>Quantity: <span id="summary-quantity">0</span></p>
+                <p>Total Amount: <span id="summary-total">₹0</span></p>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
